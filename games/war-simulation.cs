@@ -167,6 +167,7 @@ public class Game
 	private Deck _deck;
 	private Player player1;
 	private Player player2;
+	private RoundLinkedList _rounds; //linked list of all rounds in the game
 	
 	public Game(string player1Name, string player2Name)
 	{
@@ -174,6 +175,7 @@ public class Game
 		_deck.Shuffle();
 		player1 = new Player(player1Name);
 		player2 = new Player(player2Name);
+		_rounds = new RoundLinkedList(); //initialize the linked list
 		DealCards();
 	}
 	//split the deck evenly between the two players
@@ -208,6 +210,14 @@ public class Game
 	
 	private int PlayRound(int rounds)
 	{
+
+		//--------Data Collected---------
+		int roundnumber = rounds;
+		string winner = "";
+		int warCount = 0;
+		int potSize = 2;
+		//-------------------------------
+		
 		Card card_player1, card_player2;
 	
 		//each player draws 1 card from top of their hand
@@ -241,6 +251,7 @@ public class Game
 			bool warOver = false;
 			while(!warOver)
 			{
+				warCount++;
 				//first check if each player even has enough cards to do war with
 				if(player1.CardCount < 4)
 				{
@@ -275,14 +286,18 @@ public class Game
 				
 				if (warCard1.Value > warCard2.Value)
 				{
+					winner = player1.Name;
 					Console.WriteLine($"{player1.Name} wins the war and takes {JackPot.Count} cards from the pot!");
 					foreach(Card c in JackPot) player1.AddCard(c);
+					potSize = JackPot.Count;
 					warOver = true;
 				}
 				else if (warCard2.Value > warCard1.Value)
 				{
+					winner = player2.Name;
 					Console.WriteLine($"{player2.Name} wins the war and takes {JackPot.Count} cards from the pot!");
 					foreach(Card c in JackPot) player2.AddCard(c);
+					potSize = JackPot.Count;
 					warOver = true;
 				}
 				else
@@ -357,13 +372,44 @@ public class RoundLinkedList
 	private RoundNode _head; //first node in the RoundLinkedList
 	private RoundNode _tail; //last node
 	public int Count { get; private set; }
-
+	
+	//linkedlist constructor
 	public RoundLinkedList()
 	{
 		_head = null;
 		_tail = null;
 		Count = 0;
 	}
+	
+	public void AddRound(Round round)
+	{
+		RoundNode newNode = new RoundNode(round);
+		
+		if(_head == null) //list is empty
+		{
+			_head = newNode;
+			_tail = newNode;
+		}
+		else
+		{
+			_tail.Next = newNode;
+			_tail = newNode;
+		}
+		
+		Count += 1; //increment number of nodes in list
+	}
+	
+	//print all the rounds in the game
+	public void PrintAll()
+	{
+		RoundNode current = _head;
+		while(current != null)
+		{
+			Console.WriteLine(current.Data); //prints the round's data
+			current = current.Next; 
+		}
+	}
+	
 }
 	
 //-----------------------------------------------------------------------------------------------------
