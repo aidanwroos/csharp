@@ -147,27 +147,65 @@ public class Player
 			Console.WriteLine($"{_hand[i].ToString()}");
 		}
 	}
+	
+	
 }
+
+public class Game
+{
+	private Deck _deck;
+	private Player player1;
+	private Player player2;
+	
+	public Game(string player1Name, string player2Name)
+	{
+		_deck = new Deck();
+		_deck.Shuffle();
+		player1 = new Player(player1Name);
+		player2 = new Player(player2Name);
+		DealCards();
+	}
+	//split the deck evenly between the two players
+	public void DealCards()
+	{
+		for(int i=0; i < 26; i++)
+		{
+			player1.DrawCard(_deck.Deal());
+			player2.DrawCard(_deck.Deal());
+		}
+	}
+	
+	public void Start()
+	{
+		int flag = 0; //no winners initially
+		while(flag != 1)
+		{
+			flag = PlayRound();
+		}
+	}
+	
+	private int PlayRound()
+	{
+		//each player draws a single card
+		//compare both player's cards
+			//if the cards have the same values:
+				//1. each player draws 3 cards and returns the 4th card
+				//2. compare each player's 4th card
+				//3. if cards have same values:
+					//(repeat steps 1-3)
+			//whoever's card's value is smallest:
+				//give other player all cards drawn in the round
+		
+		return 0; //default
+	}
+}
+
 
 public class Program
 {
 	public static void Main()
 	{
-		Deck deck = new Deck();
-		deck.Shuffle();
-		
-		Player player1 = new Player("Aidan");
-		Player player2 = new Player("Computer");
-		
-		for(int i=0; i<26; i++)
-		{
-			player1.DrawCard(deck.Deal());
-			player2.DrawCard(deck.Deal());
-		}
-		
-		player1.PrintHand();
-		
-		
-		
+		Game game = new Game("Aidan", "Computer");
+		game.Start();
 	}
 }
