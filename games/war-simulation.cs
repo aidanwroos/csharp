@@ -230,12 +230,14 @@ public class Game
 		
 		if(card_player1.Value > card_player2.Value)
 		{
+			winner = player1.Name;
 			player1.AddCard(card_player1);
 			player1.AddCard(card_player2);
 			Console.WriteLine("Player 1 wins the round!");
 		}
 		else if (card_player1.Value < card_player2.Value)
 		{
+			winner = player2.Name;
 			player2.AddCard(card_player2);
 			player2.AddCard(card_player1);
 			Console.WriteLine("Player 2 wins the round!");
@@ -257,13 +259,17 @@ public class Game
 				{
 					Console.WriteLine($"{player2.Name} wins the war - {player1.Name} doesn't have enough cards!");
 					foreach (Card c in JackPot) player2.AddCard(c);
-					return 0;
+					winner = player2.Name;
+					potSize = JackPot.Count;
+					break; //exit war loop
 				}
 				if(player2.CardCount < 4)
 				{
 					Console.WriteLine($"{player1.Name} wins the war - {player2.Name} doesn't have enough cards!");
 					foreach (Card c in JackPot) player1.AddCard(c);
-					return 0;
+					winner = player1.Name;
+					potSize = JackPot.Count;
+					break; //exit war loop
 				}
 				
 				//each player draws 3 cards from their hand, and adds them to the pot
@@ -316,6 +322,13 @@ public class Game
 					//(repeat steps 1-3)
 			//whoever's card's value is smallest:
 				//give other player all cards drawn in the round
+		
+		//int roundnumber = rounds;
+		//string winner = "";
+		//int warCount = 0;
+		//int potSize = 2;
+		Round round = new Round(roundnumber, card_player1, card_player2, winner, warCount, potSize);
+		_rounds.AddRound(round);
 		
 		return 0;
 	}
