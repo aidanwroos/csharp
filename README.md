@@ -7,7 +7,7 @@ A simulation of the two-player card game War written in C#. This program simulat
 |---|---|
 |Total rounds | 362144 |
 |Games detected | 2000 |
-|Avg rounds per game | 183.6 |
+|Avg rounds per game | 183 |
 |Min rounds in a game | 16 |
 |Max rounds in a game | 1252 |
 |Aidan win rate | 50.0% |
