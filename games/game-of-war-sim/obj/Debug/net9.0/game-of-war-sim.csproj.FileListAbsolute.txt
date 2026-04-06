@@ -1,0 +1,15 @@
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\bin\Debug\net9.0\game-of-war-sim.exe
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\bin\Debug\net9.0\game-of-war-sim.deps.json
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\bin\Debug\net9.0\game-of-war-sim.runtimeconfig.json
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\bin\Debug\net9.0\game-of-war-sim.dll
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\bin\Debug\net9.0\game-of-war-sim.pdb
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.AssemblyInfoInputs.cache
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.AssemblyInfo.cs
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.csproj.CoreCompileInputs.cache
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.sourcelink.json
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.dll
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\refint\game-of-war-sim.dll
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.pdb
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\game-of-war-sim.genruntimeconfig.cache
+C:\Users\aidan\source\repos\csharp\games\game-of-war-sim\obj\Debug\net9.0\ref\game-of-war-sim.dll
