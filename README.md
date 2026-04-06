@@ -41,11 +41,12 @@ A simulation of the two-player card game War written in C#. This program simulat
 
 ## How the simulation works
 - A 52 card deck is shuffled and dealt between two players (each player's hand having 26 cards)
-- Each round both player flip the top card in their hand - highest card wins both
-- On tie (WAR) - each player puts 3 cards into the JackPot and flips a 4th to compare
+- Each round both players flip the top card in their hand - highest rank wins both cards
+- On tie (WAR) - each player puts 3 cards into the JackPot and flips a 4th card  to compare
 - War continues until a player wins the pot and the game returns to its normal state
-- The player who collects all the cards from the deck wins.
+- The player who collects all 52 cards from the deck wins.
 - Round simulation data is stored in a custom linked list and formatted/exported to a round.json file
+- The parse.py python script analyzes the json file containing the rounds and each round's data
 
 ## Technologies involved
 - C# using OOP paradigm
