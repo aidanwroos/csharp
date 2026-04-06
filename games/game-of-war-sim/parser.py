@@ -21,7 +21,7 @@ game_lengths.append(current_len)
 
 print(f'Total rounds: {len(data)}')
 print(f'Games detected: {len(game_lengths)}')
-print(f'Avg rounds per game: {sum(game_lengths) / len(game_lengths):.1f}')
+print(f'Avg rounds per game: {sum(game_lengths) / len(game_lengths):.0f}')
 print(f'Min rounds in a game: {min(game_lengths)}')
 print(f'Max rounds in a game: {max(game_lengths)}')
 
